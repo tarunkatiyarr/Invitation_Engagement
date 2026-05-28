@@ -48,11 +48,13 @@ export class Invitation implements OnInit, OnDestroy {
 
     const location = 'Shiv Shambhu Party Lawn GT Road Araul';
 
+    // https://maps.apple/p/0vJoSI4zRMHRCI
+
     if (this.isIOS || this.isMac) {
 
       // Apple Maps
       window.open(
-        `https://maps.apple.com/?q=${encodeURIComponent(location)}`,
+        `https://maps.apple/p/0vJoSI4zRMHRCI`,
         '_blank'
       );
 
