@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-invitation',
@@ -8,16 +8,25 @@ import { Component } from '@angular/core';
   styleUrl: './invitation.scss',
   standalone: true
 })
-export class Invitation {
+export class Invitation implements OnInit, OnDestroy {
 
   hearts = Array(20);
+  isIOS: boolean = false;
+  isAndroid: boolean = false;
+  isMac: boolean = false;
+  isWindows: boolean = false;
+  days: number = 0;
+  hours: number = 0;
+  minutes: number = 0;
+  seconds: number = 0;
+  private countdownInterval: any;
 
-  isIOS = false;
-  isAndroid = false;
-  isMac = false;
-  isWindows = false;
+    constructor(
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit() {
+    this.startCountdown();
 
     const userAgent = navigator.userAgent;
 
@@ -33,21 +42,6 @@ export class Invitation {
     // WIndows
     this.isWindows = /Windows/i.test(userAgent);
 
-    // if (/android/i.test(ua)) {
-    //   console.log('Android');
-    // }
-
-    // if (/iPad|iPhone|iPod/.test(ua)) {
-    //   console.log('iPhone');
-    // }
-
-    // if (/Windows/i.test(ua)) {
-    //   console.log('Windows');
-    // }
-
-    // if (/Macintosh/i.test(ua)) {
-    //   console.log('Mac');
-    // }
   }
 
   openMap() {
@@ -120,6 +114,60 @@ END:VCALENDAR
         '_blank'
       );
     }
+  }
+
+
+
+
+  startCountdown(): void {
+
+    const targetDate = new Date(
+      '2026-06-19T14:00:00'
+    ).getTime();
+
+    this.countdownInterval = setInterval(() => {
+
+      const now = new Date().getTime();
+
+      const distance = targetDate - now;
+
+      if (distance <= 0) {
+
+        clearInterval(this.countdownInterval);
+
+        return;
+      }
+
+      this.days = Math.floor(
+        distance / (1000 * 60 * 60 * 24)
+      );
+
+      this.hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24))
+        / (1000 * 60 * 60)
+      );
+
+      this.minutes = Math.floor(
+        (distance % (1000 * 60 * 60))
+        / (1000 * 60)
+      );
+
+      this.seconds = Math.floor(
+        (distance % (1000 * 60))
+        / 1000
+      );
+
+      // IMPORTANT
+      this.cdr.detectChanges();
+
+    }, 1000);
+
+  }
+
+  ngOnDestroy(): void {
+
+    clearInterval(this.countdownInterval);
+
   }
 
 }

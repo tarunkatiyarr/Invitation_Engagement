@@ -9,6 +9,12 @@
 
     <img class="leaf leaf-bottom-right" src="https://cdn-icons-png.flaticon.com/512/628/628324.png" />
 
+    <!-- Peacock Decorations -->
+
+    <!-- <img class="peacock peacock-left" src="https://pngimg.com/d/peacock_feather_PNG90.png" />
+
+    <img class="peacock peacock-right" src="https://pngimg.com/d/peacock_feather_PNG90.png" /> -->
+
     <!-- Main Card -->
     <div class="invitation-card">
 
@@ -40,7 +46,7 @@
             </div>
 
             <div class="and">
-                and
+                &
             </div>
 
             <div class="name">
@@ -62,43 +68,73 @@
         <div class="divider"></div>
 
         <!-- Date -->
-        <div class="date">
-            19 JUNE 2026
-        </div>
+        <div class="date-section">
 
-        <!-- Time -->
-        <div class="time">
-            2 O'CLOCK IN THE AFTERNOON
-        </div>
+            <div class="date">
+                19 JUNE 2026
+            </div>
 
-        <!-- Venue -->
-        <div class="venue">
-            SHIV SHAMBHU PARTY LAWN
-        </div>
+            <div class="countdown-text">
 
-        <div class="address">
-            GT ROAD, ARAUL
-        </div>
+                (
+                {{ days }}d :
+                {{ hours < 10 ? '0' + hours : hours }}h : {{ minutes < 10 ? '0' + minutes : minutes }}m : {{ seconds <
+                    10 ? '0' + seconds : seconds }}s ) </div>
 
-        <!-- Buttons -->
-        <div class="buttons-row">
+            </div>
 
-            <button class="elegant-btn" (click)="openMap()">
-                <span>📍 View Venue</span>
-            </button>
+            <!-- Time -->
+            <div class="time">
+                2 O'CLOCK IN THE AFTERNOON
+            </div>
 
-            <a class="elegant-btn"
-                 (click)="openCalendar()">
-                <span>📅 Save Date</span>
-            </a>
+            <!-- Venue -->
+            <div class="venue">
+                SHIV SHAMBHU PARTY LAWN
+            </div>
 
-        </div>
+            <div class="address">
+                GT ROAD, ARAUL
+            </div>
 
-        <!-- Footer -->
-        <div class="footer">
-            We can't wait to celebrate with you ❤️
+            <!-- Buttons -->
+            <div class="buttons-row">
+
+                <button class="elegant-btn" (click)="openMap()">
+                    <span>📍 View Venue</span>
+                </button>
+
+                <button class="elegant-btn" (click)="openCalendar()">
+                    <span>📅 Save Date</span>
+                </button>
+
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+
+                <div class="footer-text">
+                    We can't wait to celebrate with you ❤️
+                </div>
+
+                <div class="contact-section">
+
+                    <div class="contact-title">
+                        For Any Queries
+                    </div>
+
+                    <div class="contact-item">
+                        📞 Tarun — +91 9454277709
+                    </div>
+
+                    <div class="contact-item">
+                        📞 Varun — +91 8960373348
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
     </div>
-
-</div>
