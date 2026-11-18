@@ -1,0 +1,99 @@
+
+<footer class="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+
+  <div class="max-w-6xl mx-auto px-5 py-10">
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Brand -->
+      <div>
+        <a
+          routerLink="/home"
+          class="text-xl font-bold text-slate-900 dark:text-white">
+          {{ name }}<span class="text-blue-600">.</span>
+        </a>
+
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+          {{ role }}
+        </p>
+
+        <p class="mt-4 text-sm leading-6 text-slate-500 dark:text-slate-400 max-w-xs">
+          Building modern, scalable and user-friendly web applications.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="font-semibold text-slate-900 dark:text-white mb-4">
+          Quick Links
+        </h3>
+
+        <div class="grid grid-cols-2 gap-y-3 text-sm">
+
+          <a routerLink="/home" class="footer-link">Home</a>
+          <a routerLink="/about" class="footer-link">About</a>
+          <a routerLink="/skills" class="footer-link">Skills</a>
+          <a routerLink="/projects" class="footer-link">Projects</a>
+          <a routerLink="/experience" class="footer-link">Experience</a>
+          <a routerLink="/contact" class="footer-link">Contact</a>
+
+        </div>
+      </div>
+
+      <!-- Social Links -->
+      <div>
+        <h3 class="font-semibold text-slate-900 dark:text-white mb-4">
+          Connect With Me
+        </h3>
+
+        <div class="flex gap-3">
+
+          <a
+            [href]="githubUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            class="social-link">
+            <fa-icon [icon]="faGithub" size="lg"></fa-icon>
+          </a>
+
+          <a
+            [href]="linkedinUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            class="social-link">
+            <fa-icon [icon]="faLinkedin" size="lg"></fa-icon>
+          </a>
+
+        </div>
+
+        <p class="mt-4 text-sm text-slate-500 dark:text-slate-400">
+          Let's connect and build something great.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Bottom Footer -->
+    <div class="mt-10 pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4">
+
+      <p class="text-sm text-slate-500 dark:text-slate-400 text-center">
+        © {{ currentYear }} {{ name }}. All rights reserved.
+      </p>
+
+      <button
+        type="button"
+        (click)="scrollToTop()"
+        aria-label="Back to top"
+        class="flex items-center gap-2 text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700">
+
+        Back to Top
+        <fa-icon [icon]="faArrowUp"></fa-icon>
+
+      </button>
+
+    </div>
+
+  </div>
+</footer>

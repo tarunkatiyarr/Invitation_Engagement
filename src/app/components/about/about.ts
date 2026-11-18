@@ -1,18 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
-import {
-  faCode,
-  faLaptopCode,
-  faLightbulb,
-  faRocket,
-  faDownload
-} from '@fortawesome/free-solid-svg-icons';
+import { faCode, faLaptopCode, faLightbulb, faRocket, faDownload } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-about',
-  imports: [RouterLink, FontAwesomeModule],
+  imports: [FontAwesomeModule],
   templateUrl: './about.html',
   styleUrl: './about.css'
 })

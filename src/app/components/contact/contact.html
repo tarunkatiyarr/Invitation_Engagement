@@ -1,1 +1,211 @@
-<p>contact works!</p>
+
+<section class="min-h-screen bg-white dark:bg-slate-950 px-5 py-16 transition-colors duration-300">
+
+  <div class="max-w-5xl mx-auto">
+
+    <!-- Heading -->
+    <div class="mb-12">
+      <p class="text-sm font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-3">
+        Get In Touch
+      </p>
+
+      <h1 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">
+        Contact Me
+      </h1>
+
+      <p class="mt-4 max-w-2xl leading-7 text-slate-600 dark:text-slate-400">
+        Have a project in mind or an opportunity to discuss?
+        Feel free to reach out. I'd be happy to connect.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+
+      <!-- Contact Information -->
+      <div class="md:col-span-2 space-y-6">
+
+        <div>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">
+            Let's Connect
+          </h2>
+
+          <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-400">
+            I'm always open to discussing new projects, opportunities
+            and interesting ideas.
+          </p>
+        </div>
+
+        <!-- Email -->
+        <div class="flex items-start gap-4">
+          <div class="w-11 h-11 flex items-center justify-center rounded-lg bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400">
+            <fa-icon [icon]="faEnvelope"></fa-icon>
+          </div>
+
+          <div>
+            <p class="font-semibold text-slate-900 dark:text-white">
+              Email
+            </p>
+
+            <a
+              [href]="'mailto:' + email"
+              class="text-sm text-slate-600 dark:text-slate-400 hover:text-blue-600 break-all">
+              {{ email }}
+            </a>
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div class="flex items-start gap-4">
+          <div class="w-11 h-11 flex items-center justify-center rounded-lg bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400">
+            <fa-icon [icon]="faLocationDot"></fa-icon>
+          </div>
+
+          <div>
+            <p class="font-semibold text-slate-900 dark:text-white">
+              Location
+            </p>
+
+            <p class="text-sm text-slate-600 dark:text-slate-400">
+              India · Open to Remote Opportunities
+            </p>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="pt-5 border-t border-slate-200 dark:border-slate-800">
+
+          <p class="font-semibold text-slate-900 dark:text-white mb-4">
+            Find me on
+          </p>
+
+          <div class="flex gap-3">
+
+            <a
+              [href]="githubUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              class="w-11 h-11 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+              <fa-icon [icon]="faGithub" size="lg"></fa-icon>
+            </a>
+
+            <a
+              [href]="linkedinUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              class="w-11 h-11 flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+              <fa-icon [icon]="faLinkedin" size="lg"></fa-icon>
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Contact Form -->
+      <div class="md:col-span-3">
+
+        <form
+          #contactNgForm="ngForm"
+          (ngSubmit)="submitForm()"
+          class="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 p-6 md:p-8 space-y-5">
+
+          <div>
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white">
+              Send Me a Message
+            </h2>
+
+            <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">
+              Fill in the details below and I'll get back to you.
+            </p>
+          </div>
+
+          <!-- Name -->
+          <div>
+            <label for="name" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+              Your Name
+            </label>
+
+            <input
+              id="name"
+              type="text"
+              name="name"
+              [(ngModel)]="contactForm.name"
+              required
+              placeholder="Enter your name"
+              class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-3 text-sm text-slate-900 dark:text-white outline-none focus:border-blue-500">
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label for="senderEmail" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+              Your Email
+            </label>
+
+            <input
+              id="senderEmail"
+              type="email"
+              name="senderEmail"
+              [(ngModel)]="contactForm.email"
+              required
+              email
+              placeholder="Enter your email"
+              class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-3 text-sm text-slate-900 dark:text-white outline-none focus:border-blue-500">
+          </div>
+
+          <!-- Subject -->
+          <div>
+            <label for="subject" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+              Subject
+            </label>
+
+            <input
+              id="subject"
+              type="text"
+              name="subject"
+              [(ngModel)]="contactForm.subject"
+              required
+              placeholder="Enter message subject"
+              class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-3 text-sm text-slate-900 dark:text-white outline-none focus:border-blue-500">
+          </div>
+
+          <!-- Message -->
+          <div>
+            <label for="message" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+              Message
+            </label>
+
+            <textarea
+              id="message"
+              name="message"
+              [(ngModel)]="contactForm.message"
+              required
+              rows="5"
+              placeholder="Write your message..."
+              class="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-4 py-3 text-sm text-slate-900 dark:text-white outline-none focus:border-blue-500 resize-y">
+            </textarea>
+          </div>
+
+          <!-- Submit -->
+          <button
+            type="submit"
+            [disabled]="contactNgForm.invalid"
+            class="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-medium px-6 py-3 text-sm transition-colors">
+
+            <fa-icon [icon]="faPaperPlane"></fa-icon>
+            Send Message
+
+          </button>
+
+          <p class="text-xs text-slate-500 dark:text-slate-400">
+            This will open your default email application with your message prepared.
+          </p>
+
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</section>

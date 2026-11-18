@@ -1,1 +1,186 @@
-<p>experience works!</p>
+
+<section class="min-h-screen bg-white dark:bg-slate-950 px-5 py-16 transition-colors duration-300">
+
+  <div class="max-w-5xl mx-auto">
+
+    <!-- Heading -->
+    <div class="mb-14">
+      <p class="text-sm font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-3">
+        Career Journey
+      </p>
+
+      <h1 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">
+        Professional Experience
+      </h1>
+
+      <p class="mt-4 max-w-2xl text-slate-600 dark:text-slate-400 leading-7">
+        My professional journey as a developer, working with modern
+        frontend and backend technologies to build scalable web applications.
+      </p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="relative border-l-2 border-slate-200 dark:border-slate-800 ml-2 md:ml-4 space-y-12">
+
+      @for (item of experiences; track item.company) {
+
+        <div class="relative pl-6 md:pl-10">
+
+          <!-- Timeline Dot -->
+          <div
+            class="absolute -left-[9px] top-1 w-4 h-4 rounded-full border-4 border-white dark:border-slate-950"
+            [class.bg-blue-600]="item.current"
+            [class.bg-slate-400]="!item.current">
+          </div>
+
+          <!-- Professional Summary -->
+<div class="mb-12">
+
+  <div class="rounded-xl bg-blue-50 dark:bg-slate-900 border border-blue-100 dark:border-slate-800 p-6 md:p-8">
+
+    <h2 class="text-xl font-bold text-slate-900 dark:text-white">
+      Professional Summary
+    </h2>
+
+    <p class="mt-3 leading-7 text-slate-600 dark:text-slate-300">
+      {{ professionalSummary }}
+    </p>
+
+    <!-- Statistics -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+
+      @for (stat of summaryStats; track stat.label) {
+        <div class="bg-white dark:bg-slate-800 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
+
+          <h3 class="text-xl md:text-2xl font-bold text-blue-600 dark:text-blue-400">
+            {{ stat.value }}
+          </h3>
+
+          <p class="text-xs md:text-sm text-slate-500 dark:text-slate-400 mt-2">
+            {{ stat.label }}
+          </p>
+
+        </div>
+      }
+
+    </div>
+
+  </div>
+
+</div>
+
+          <!-- Experience Card -->
+          <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 p-6 md:p-8">
+
+            <!-- Title and Company -->
+            <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-4">
+
+              <div>
+                <h2 class="text-xl md:text-2xl font-bold text-slate-900 dark:text-white">
+                  {{ item.jobTitle }}
+                </h2>
+
+                <h3 class="mt-2 text-lg font-semibold text-blue-600 dark:text-blue-400">
+                  {{ item.company }}
+                </h3>
+
+                @if (item.project) {
+                  <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">
+                    Project: {{ item.project }}
+                  </p>
+                }
+              </div>
+
+              @if (item.current) {
+                <span class="w-fit rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-3 py-1 text-xs font-semibold">
+                  Currently Working
+                </span>
+              }
+
+            </div>
+
+            <!-- Duration and Location -->
+            <div class="flex flex-wrap gap-x-6 gap-y-3 mt-5 text-sm text-slate-500 dark:text-slate-400">
+
+              <div class="flex items-center gap-2">
+                <fa-icon [icon]="faCalendarDays"></fa-icon>
+                <span>{{ item.duration }}</span>
+              </div>
+
+              <div class="flex items-center gap-2">
+                <fa-icon [icon]="faLocationDot"></fa-icon>
+                <span>{{ item.location }}</span>
+              </div>
+
+            </div>
+
+            <!-- Description -->
+            <p class="mt-6 leading-7 text-slate-600 dark:text-slate-300">
+              {{ item.description }}
+            </p>
+
+            <!-- Responsibilities -->
+            <div class="mt-7">
+              <h4 class="font-semibold text-slate-900 dark:text-white mb-4">
+                Key Responsibilities
+              </h4>
+
+              <ul class="space-y-3">
+                @for (responsibility of item.responsibilities; track responsibility) {
+                  <li class="flex items-start gap-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
+                    <span class="text-blue-600 dark:text-blue-400 mt-0.5">▹</span>
+                    <span>{{ responsibility }}</span>
+                  </li>
+                }
+              </ul>
+            </div>
+
+            <!-- Technologies -->
+            <div class="mt-7">
+              <h4 class="font-semibold text-slate-900 dark:text-white mb-4">
+                Technologies & Tools
+              </h4>
+
+              <div class="flex flex-wrap gap-2">
+                @for (technology of item.technologies; track technology) {
+                  <span class="rounded-md border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-xs font-medium text-slate-700 dark:text-slate-300">
+                    {{ technology }}
+                  </span>
+                }
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      }
+
+    </div>
+
+
+
+
+
+    <!-- Footer Message -->
+    <div class="mt-14 rounded-xl border border-slate-200 dark:border-slate-800 p-6 flex items-start gap-4">
+
+      <fa-icon
+        [icon]="faCode"
+        class="text-xl text-blue-600 dark:text-blue-400 mt-1">
+      </fa-icon>
+
+      <div>
+        <h3 class="font-semibold text-slate-900 dark:text-white">
+          Always Learning and Growing
+        </h3>
+
+        <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+          Continuously exploring new technologies, improving development
+          skills and building better software solutions.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
