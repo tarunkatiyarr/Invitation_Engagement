@@ -1,0 +1,97 @@
+<section class="min-h-screen bg-white dark:bg-slate-950">
+
+    <div class="max-w-6xl mx-auto px-6 py-16">
+
+        <!-- Heading -->
+        <div class="mb-12">
+
+            <p class="text-purple-600 dark:text-purple-400 font-semibold mb-3">
+                WHAT I WORK WITH
+            </p>
+
+            <h1 class="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white">
+                My Skills
+            </h1>
+
+            <p class="mt-5 text-slate-600 dark:text-slate-400 max-w-2xl leading-7">
+                Technologies and tools I use to develop modern,
+                responsive and scalable web applications.
+            </p>
+
+            <div class="w-16 h-1 bg-purple-600 rounded-full mt-5"></div>
+
+        </div>
+
+        <!-- Skill Categories -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            @for (category of skillCategories; track category.title) {
+
+            <div
+                class="p-7 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-purple-400 dark:hover:border-purple-500 transition-colors duration-300">
+
+                <!-- Category Heading -->
+                <div class="flex items-center gap-4 mb-5">
+
+                    <div
+                        class="w-12 h-12 rounded-lg bg-purple-100 dark:bg-purple-500/10 flex items-center justify-center text-purple-600 dark:text-purple-400">
+
+                        <fa-icon [icon]="category.icon" class="text-xl"></fa-icon>
+
+                    </div>
+
+                    <div>
+
+                        <h2 class="text-xl font-bold text-slate-900 dark:text-white">
+                            {{ category.title }}
+                        </h2>
+
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">
+                            {{ category.description }}
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Technologies -->
+                <div class="flex flex-wrap gap-3">
+
+                    @for (skill of category.skills; track skill) {
+
+                    <span
+                        class="px-4 py-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-sm font-medium text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+
+                        {{ skill }}
+
+                    </span>
+
+                    }
+
+                </div>
+
+            </div>
+
+            }
+
+        </div>
+
+        <!-- Bottom Message -->
+        <div
+            class="mt-12 p-6 rounded-xl bg-purple-50 dark:bg-purple-500/5 border border-purple-100 dark:border-purple-500/20">
+
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-white">
+                Always Learning, Always Improving
+            </h3>
+
+            <p class="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-400">
+                Technology keeps evolving, and so do I. I enjoy exploring
+                new tools, learning better development practices and
+                improving my problem-solving skills.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>

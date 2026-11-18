@@ -6,13 +6,9 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "engagement-invitation": {
+    "my-portfolio": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -22,18 +18,14 @@
           "options": {
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
-              "src/assets",
-              "src/_redirects",
               {
                 "glob": "**/*",
                 "input": "public"
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.css"
             ]
           },
           "configurations": {
@@ -64,10 +56,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "engagement-invitation:build:production"
+              "buildTarget": "my-portfolio:build:production"
             },
             "development": {
-              "buildTarget": "engagement-invitation:build:development"
+              "buildTarget": "my-portfolio:build:development"
             }
           },
           "defaultConfiguration": "development"

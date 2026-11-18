@@ -1,0 +1,145 @@
+
+<section class="min-h-screen bg-white dark:bg-slate-950">
+
+  <div class="max-w-6xl mx-auto px-6 py-16">
+
+    <!-- Page Heading -->
+    <div class="mb-14">
+
+      <p class="text-purple-600 dark:text-purple-400 font-semibold mb-3">
+        GET TO KNOW ME
+      </p>
+
+      <h1 class="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white">
+        About Me
+      </h1>
+
+      <div class="w-16 h-1 bg-purple-600 rounded-full mt-5"></div>
+
+    </div>
+
+    <!-- About Content -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+
+      <!-- Introduction -->
+      <div class="lg:col-span-2">
+
+        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">
+          I'm {{ name }}, a Full Stack Developer.
+        </h2>
+
+        <p class="text-lg leading-8 text-slate-600 dark:text-slate-400">
+          {{ introduction }}
+        </p>
+
+        <p class="mt-5 text-base leading-8 text-slate-600 dark:text-slate-400">
+          {{ description }}
+        </p>
+
+        <p class="mt-5 text-base leading-8 text-slate-600 dark:text-slate-400">
+          My goal is to create applications that combine clean design,
+          reliable functionality and a great user experience.
+          I continuously explore new technologies and improve my
+          development skills.
+        </p>
+
+        <!-- Resume Button -->
+        <div class="mt-8">
+
+          <a href="/Resume.pdf"
+             download
+             class="inline-flex items-center gap-3 px-6 py-3 rounded-lg bg-purple-600 hover:bg-purple-700 text-white font-medium transition">
+
+            <fa-icon [icon]="faDownload"></fa-icon>
+            Download Resume
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- Developer Information -->
+      <div class="space-y-5">
+
+        <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+
+          <fa-icon
+            [icon]="faLaptopCode"
+            class="text-3xl text-purple-600">
+          </fa-icon>
+
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-4">
+            What I Do
+          </h3>
+
+          <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+            Build responsive frontend interfaces and robust backend APIs.
+          </p>
+
+        </div>
+
+        <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+
+          <fa-icon
+            [icon]="faLightbulb"
+            class="text-3xl text-purple-600">
+          </fa-icon>
+
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-4">
+            My Approach
+          </h3>
+
+          <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+            Write clean code, solve problems and focus on user experience.
+          </p>
+
+        </div>
+
+        <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+
+          <fa-icon
+            [icon]="faRocket"
+            class="text-3xl text-purple-600">
+          </fa-icon>
+
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-4">
+            My Goal
+          </h3>
+
+          <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+            Build scalable applications and continuously grow as a developer.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Interests -->
+    <div class="mt-20">
+
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-7">
+        My Technical Interests
+      </h2>
+
+      <div class="flex flex-wrap gap-3">
+
+        @for (interest of interests; track interest) {
+
+          <span class="px-5 py-3 rounded-lg bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 text-sm font-medium">
+
+            {{ interest }}
+
+          </span>
+
+        }
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

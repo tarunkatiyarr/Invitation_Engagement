@@ -1,0 +1,147 @@
+<section class="min-h-[calc(100vh-80px)] bg-white dark:bg-slate-950 flex items-center">
+
+    <div class="max-w-6xl mx-auto px-6 py-16 w-full">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+            <!-- Introduction -->
+            <div class="order-2 md:order-1">
+
+                <p class="text-purple-600 dark:text-purple-400 font-semibold mb-4">
+                    Hello, I'm
+                </p>
+
+                <h1 class="text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 dark:text-white">
+                    Tarun Katiyar
+                </h1>
+
+                <h2 class="mt-5 text-2xl lg:text-3xl font-semibold text-slate-700 dark:text-slate-300">
+                    <span class="text-purple-600 dark:text-purple-400">
+                        {{ typedRole() }}
+                    </span>
+                    <span class="animate-pulse">|</span>
+                </h2>
+
+                <p class="mt-6 text-base leading-8 text-slate-600 dark:text-slate-400 max-w-lg">
+                    {{ description }}
+                </p>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap gap-4 mt-8">
+
+                    <a routerLink="/projects"
+                        class="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium transition-colors">
+
+                        View Projects
+                        <fa-icon [icon]="faArrowRight"></fa-icon>
+
+                    </a>
+
+                    <a routerLink="/contact"
+                        class="inline-flex items-center gap-2 px-6 py-3 border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-white rounded-lg font-medium hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors">
+
+                        <fa-icon [icon]="faEnvelope"></fa-icon>
+                        Contact Me
+
+                    </a>
+
+                </div>
+
+                <!-- Social Links -->
+                <div class="mt-10">
+
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">
+                        Find me on
+                    </p>
+
+                    <div class="flex items-center gap-5">
+
+                        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+                            class="text-2xl text-slate-600 dark:text-slate-300 hover:text-purple-600 transition-colors">
+
+                            <fa-icon [icon]="faGithub"></fa-icon>
+
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/katiyartarun" target="_blank" rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                            class="text-2xl text-slate-600 dark:text-slate-300 hover:text-blue-600 transition-colors">
+
+                            <fa-icon [icon]="faLinkedin"></fa-icon>
+
+                        </a>
+
+                        <a routerLink="/contact" aria-label="Email"
+                            class="text-2xl text-slate-600 dark:text-slate-300 hover:text-purple-600 transition-colors">
+
+                            <fa-icon [icon]="faEnvelope"></fa-icon>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Profile Image -->
+            <div class="order-1 md:order-2 flex justify-center">
+
+                <div
+                    class="w-64 h-64 sm:w-80 sm:h-80 rounded-2xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center overflow-hidden">
+
+                    <!-- Replace with your profile photograph -->
+                    <div class="text-center">
+
+                        <div class="text-7xl font-bold text-purple-600">
+                            TK
+                        </div>
+
+                        <p class="mt-3 text-sm text-slate-500 dark:text-slate-400">
+                            Your Profile Photo
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Bottom Skills -->
+        <div class="mt-20 pt-8 border-t border-slate-200 dark:border-slate-800">
+
+            <p class="text-center text-sm text-slate-500 dark:text-slate-400 mb-6">
+                TECHNOLOGIES I WORK WITH
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4 sm:gap-8">
+
+                <span class="font-semibold text-slate-700 dark:text-slate-300">
+                    Angular
+                </span>
+
+                <span class="font-semibold text-slate-700 dark:text-slate-300">
+                    React
+                </span>
+
+                <span class="font-semibold text-slate-700 dark:text-slate-300">
+                    Node.js
+                </span>
+
+                <span class="font-semibold text-slate-700 dark:text-slate-300">
+                    ASP.NET Core
+                </span>
+
+                <span class="font-semibold text-slate-700 dark:text-slate-300">
+                    SQL Server
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

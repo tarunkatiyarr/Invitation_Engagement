@@ -1,12 +1,13 @@
 import { Component, signal } from '@angular/core';
-import { Invitation } from './pages/invitation/invitation';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { Navbar } from './components/navbar/navbar';
 
 @Component({
+  imports: [RouterLink,RouterOutlet,Navbar],
   selector: 'app-root',
-  imports: [Invitation],
+  styleUrl: './app.css',
   templateUrl: './app.html',
-  styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('engagement-invitation');
+  protected readonly title = signal('my-portfolio');
 }
